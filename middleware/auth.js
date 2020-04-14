@@ -21,15 +21,15 @@ exports.registrasi = function(req, res){
 
     query = mysql.format(query,table);
 
-    connection.query(query, function (errorr, rows) {
+    connection.query(query, function(error, rows) {
         if(error){
             console.log(error);
         }else {
-            if(rows,length == 0){
+            if(rows.length == 0){
                 var query ="INSERT INTO ?? SET ?";
                 var table = ["user"];
-                query = mysql.format(query,table);
-                connection.query(query, post ,function (errorr, rows){
+                query = mysql.format(query, table);
+                connection.query(query, post ,function (error, rows){
                     if(error){
                         console.log(error);
                 }else{
